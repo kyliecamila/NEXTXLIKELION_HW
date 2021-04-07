@@ -1,0 +1,57 @@
+
+
+
+h1, h2, h3 {
+    font-weight: strong;
+}
+ 
+* {
+    background-color: pink;
+}
+h1 {
+    text-align: center;
+    padding: 80px ;
+    color:white;
+    background-color: pink;
+    border: dotted white 5px;
+    margin: 50px;
+    font-family: Georgia;
+    
+
+
+}
+.anchor {
+    background-color: white;
+    border: white solid;
+    border-radius: 6px;
+   font-family: Georgia;   
+   
+}
+a {
+    color: black;
+}
+h2 {
+    margin: 30px 0px;
+    text-align: center;
+}
+img {
+border: solid pink 4px ;
+height: 350px;
+width: auto;
+
+}
+p, .food, .visitors {
+    border: white solid 4px;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 30px;
+    margin-left:15px;
+    width: 250px;
+    
+}
+.visitors {
+    width: 500px;
+}
+.center {
+    text-align: center;
+}

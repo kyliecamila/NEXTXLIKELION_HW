@@ -1,0 +1,97 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+* {
+    display: flex;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+} 
+
+.box {
+  /*  border: solid black;*/
+    border-radius: 5px;
+    height: 40px;
+    width :210px;
+    justify-content: space-between;
+    margin-top:10px;
+    margin:5px;
+    
+    box-shadow:0 30px 60px 12px rgba(0, 0, 33, 0.05),
+    0 4px 24px 0 rgba(0, 0, 33, 0.05),
+    0 0 1px 0 rgba(0, 0, 33, 0.09)  ;
+}
+
+.title {
+    color: rgb(54, 49, 49);
+    font-size: 30px;
+    font-weight: 900;
+   /* border: solid magenta;*/
+    margin-bottom:20px;
+}
+
+.middle {
+    color:rgb(114, 114, 114);
+    font-size: 8px;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.end {
+    color: rgb(44, 149, 235);
+    font-size: 7px;
+    font-weight: 900;
+}
+
+.container {
+    /*border: solid red;*/
+    justify-content: space-between;
+    align-items:center;
+    width: 650px;
+    
+
+}
+.lines {
+    flex-direction: column;
+}
+/*.middle, .end {
+    border: solid magenta;
+}*/
+
+.bank {
+       
+  /*  border: solid green;*/
+    align-items:center;
+    justify-content: space-around;
+
+    
+}
+.price {
+  /*  border: solid blue;*/
+    align-items:center;
+}
+
+.item {
+  /*  border: solid purple;*/
+    margin: 20px;
+    flex-direction: column;
+    
+}
+
+.words, img {
+   /* border:solid pink;*/
+    margin:5px;
+}
+
+.bank .words {
+    font-size: 8px;
+    color:rgb(136, 135, 135);
+    font-weight:700;
+}
+.price .words {
+    font-size: 10px;
+    font-weight: 800;
+}
+
+img {
+    width: 20px;
+    height:20px;
+}
