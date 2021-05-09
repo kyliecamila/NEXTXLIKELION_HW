@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link href="{% static 'new.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h2>수정하기</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="context">
+            <label for="title">제목</label>
+            <input type="text" id="title" name= "title" value="{{ post.title}}">
+        </div>
+        <div class="context">
+            <label for="content">내용</label>
+            <textarea name="content" id= "content" cols="30" rows="10">{{ post.content}}</textarea>
+        </div>
+        <div class="context">
+            <label for="duedate">마감일</label>
+            <input type="date" id="duedate" name= "duedate" value="{{post.duedate}}">
+        </div>
+        <br>
+        <div class= "center">
+            <button class="submit" type="submit">등록</button>
+        </div>
+    </form>
+</body>
+</html>
+{% endblock %}

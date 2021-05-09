@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+</head>
+<body>
+
+    <h2>TO-DO LIST</h2>
+
+    <div>
+        <ul>
+            {% for post in posts %}
+            <li>
+                <a class="black" href="{% url 'detail' post.pk %}">{{post.title}}</a> 
+                (마감일: {{ post.duedate}})
+                <a href="{% url 'edit' post.pk %}"><span class="button">수정</span></a>
+                <a href="{% url 'delete' post.pk %}"> <span class="button">삭제</span></a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+</body>
+</html>
+{% endblock %}
