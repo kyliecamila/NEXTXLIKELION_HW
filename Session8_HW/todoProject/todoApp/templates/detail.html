@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link href="{% static 'detail.css' %}" rel="stylesheet">
+
+
+<div class="small_title">
+    {{ post.title}} (마감일: {{ post.duedate}})
+</div>
+<hr>
+<div class="border">
+    {{ post.content}}
+</div>
+<br><br>
+<div>
+    <a href="{% url 'edit' post.pk %}" class="click">수정</a>
+    <a href="{% url 'delete' post.pk %}" class="click">삭제</a>
+</div>
+<hr>
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="content" placeholder="댓글써주세요">
+        <button type="submit">등록</button>
+    </form>
+    <ul>
+        {% for comment in post.comments.all %}
+        <li class="space">{{ comment.content }}
+            <a href="{% url 'delete_comment' post.pk comment.pk %}" class="click">삭제</a>
+        </li>
+        {% endfor %}
+
+    </ul>
+
+</div>
+{% endblock %}

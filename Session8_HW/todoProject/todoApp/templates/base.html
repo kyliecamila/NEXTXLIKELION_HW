@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <link href="{% static 'base.css' %}" type = "text/css" rel="stylesheet">
+  {% block css %}
+
+  {% endblock css %}
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav_links">
+        <li class="nav_words"><a href="{% url 'home' %}">TODO LIST</a></li>
+        <li class="nav_words"><a href="{% url 'new' %}">일정 추가하기</a></li>
+      </ul> 
+    </nav>
+  </header>
+  <div class="title">
+    {% block title %}
+
+    {% endblock title %}
+  </div>
+  
+
+  <div class="content">
+    {% block content %}
+
+    {% endblock content %}
+  </div>
+</body>
+</html>
+
+
