@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<link href="{% static 'detail2.css' %}" rel="stylesheet">
+<link href="{% static 'detail3.css' %}" rel="stylesheet">
 
 
 <div class="small_title">
@@ -24,6 +24,7 @@
     <ul>
         {% for comment in post.comments.all %}
             <li class="space">{{ comment.content }}
+            <a class="author" href="#"> by {{comment.author}}</a> 
             {% if user.is_authenticated and comment.author.pk == user.pk %}
             <a class="click" href="{% url 'delete_comment' post.pk comment.pk %}">삭제</a>
             {% endif %}

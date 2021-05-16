@@ -17,6 +17,7 @@
             <li>
                 <a class="black" href="{% url 'detail' post.pk %}">{{post.title}}</a> 
                 (마감일: {{ post.duedate}})
+                <a class="author" href="{% url 'detail' post.pk %}">by {{post.author}}</a> 
                 {% if user.pk == post.author.pk %}
                 <a href="{% url 'edit' post.pk %}"><span class="button">수정</span></a>
                 <a href="{% url 'delete' post.pk %}"> <span class="button">삭제</span></a>

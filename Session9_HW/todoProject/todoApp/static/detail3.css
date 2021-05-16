@@ -31,6 +31,7 @@ input {
 div {
     margin:15px;
 }
+
 .space{
     margin:15px;
     list-style:circle;
@@ -38,6 +39,8 @@ div {
     text-align: left;
     
 }
-.delete { 
-    color: red;
+
+.author {
+    font-size: 16px;
+    color:pink;
 }
