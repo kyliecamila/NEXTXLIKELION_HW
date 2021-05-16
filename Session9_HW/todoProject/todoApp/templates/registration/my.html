@@ -1,0 +1,46 @@
+
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link href="{% static 'home.css' %}" type = "text/css" rel="stylesheet">
+{% endblock %}
+
+    
+    {% block title %}
+    <h2>MY TO-DO LIST</h2>
+    {% endblock title %}
+    
+    {% block content %}
+    <div>
+        <ul>
+            {% for post in my %}
+            <li>
+                <a class="black" href="{% url 'detail' post.pk %}">{{post.title}}</a> 
+                (마감일: {{ post.duedate}})
+                {% if user.pk == post.author.pk %}
+                <a href="{% url 'edit' post.pk %}"><span class="button">수정</span></a>
+                <a href="{% url 'delete' post.pk %}"> <span class="button">삭제</span></a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        <br><br>
+        
+        {% block comments %}
+        <h2>MY COMMENTS</h2>
+        {% endblock comments %}
+        <ul>
+            {% for comment in myc %}
+            <li>
+                {{comment.content}} 
+         
+                {% if user.pk == comment.author.pk %}
+                <a href="{% url 'edit' comment.pk %}"><span class="button">수정</span></a>
+                <a href="{% url 'delete' comment.pk %}"> <span class="button">삭제</span></a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    {% endblock content %}

@@ -1,0 +1,30 @@
+* {
+    text-align: center;
+}
+h2 {
+    margin:15px;
+    font-weight: 600;
+    color: pink;
+    text-align: center;
+    margin-bottom: 50px;
+    border: dotted pink 5px;
+    padding:15px;
+}
+a { 
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+li {
+    list-style: none;
+    margin: 3px;
+
+}
+.button {
+    border: solid pink 3px;
+    background-color: pink;
+    color:white;
+    border-radius: 5px;
+    font-size: 16px;
+
+}

@@ -1,0 +1,49 @@
+h2 {
+    
+    font-weight: 600;
+    color: pink;
+    text-align: center;
+    margin-bottom: 50px;
+    border: dotted pink 5px;
+    padding:15px;
+}
+a { 
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+.context {
+    display: flex;
+    margin:5px;
+    align-items: flex-start;
+}
+
+li {
+    list-style: none;
+    margin: 3px;
+}
+
+.context {
+    margin:10px;
+}
+input , textarea {
+    border: 3px pink solid;
+    border-radius: 8px;
+}
+
+
+
+.submit {
+    border: solid pink 3px;
+    background-color: pink;
+    color:white;
+    border-radius: 5px;
+}
+
+label {
+    border: solid pink 3px;
+    background-color: pink;
+    color:white;
+    border-radius: 5px;
+    margin-right: 5px;
+}

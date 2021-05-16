@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link href="{% static 'detail2.css' %}" rel="stylesheet">
+
+
+<div class="small_title">
+    {{ post.title}} (마감일: {{ post.duedate}})
+</div>
+<hr>
+<div class="border">
+    {{ post.content}}
+</div>
+<br><br>
+<div>
+    {% if user.pk == post.author.pk %}
+    <a href="{% url 'edit' post.pk %}" class="click">수정</a>
+    <a href="{% url 'delete' post.pk %}" class="click">삭제</a>
+    {% endif %}
+</div>
+<hr>
+<div>
+    
+    <ul>
+        {% for comment in post.comments.all %}
+            <li class="space">{{ comment.content }}
+            {% if user.is_authenticated and comment.author.pk == user.pk %}
+            <a class="click" href="{% url 'delete_comment' post.pk comment.pk %}">삭제</a>
+            {% endif %}
+            </li>
+        {% endfor %}
+
+    </ul>
+    {% if user.is_authenticated %}
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="content" placeholder="댓글써주세요">
+        <button type="submit">등록</button>
+    </form>
+    {% endif %}
+
+</div>
+{% endblock %}
