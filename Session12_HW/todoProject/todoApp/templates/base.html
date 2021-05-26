@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  {% load socialaccount %}
+  {% providers_media_js %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link href="{% static 'base2.css' %}" type="text/css" rel="stylesheet">
+  {% block css %}
+
+  {% endblock css %}
+</head>
+
+<body>
+  <!-- <aside class = "nav-sidebar">
+    <ul>
+      <li> <a class="nav-item" href="{% url 'home' %}">HOME</a></li>
+      {% if user.is_authenticated %}
+      <li><a class="nav-item" href="{% url 'new' %}">일정추가</a></li>
+      <li><a class="nav-item">안녕하세요, {{ user.username }}님</a></li>
+      <li><a class="nav-item" href="{% url 'my' %}">내 일정</a></li>
+      <li><a class="nav-item" href="{% url 'logout' %}">로그아웃</a></li>
+      {% else %}
+      <li><a class="nav-item"  href="{% url 'login' %}">로그인</a></li>
+      <li><a class=“nav-item” href="{% provider_login_url 'kakao' %}">카카오 로그인</a></li>
+      <li><a class="nav-item"  href="{% url 'signup' %}">회원가입</a></li>
+      {% endif %}
+    </ul>
+  </aside> -->
+  <div>
+    <a class="menu" href="javascript:;">메뉴</a>
+    <div class="nav-bar">
+      <a class="nav-item" href="{% url 'home' %}">HOME</a>
+      {% if user.is_authenticated %}
+      <a class="nav-item" href="{% url 'new' %}">일정추가</a>
+      <a class="nav-item">안녕하세요, {{ user.username }}님</a>
+      <a class="nav-item" href="{% url 'my' %}">내 일정</a>
+      <a class="nav-item" href="{% url 'logout' %}">로그아웃</a>
+      {% else %}
+      <a class="nav-item" href="{% url 'login' %}">로그인</a>
+      <a class=“nav-item” href="{% provider_login_url 'kakao' %}">카카오 로그인</a>
+      <a class="nav-item" href="{% url 'signup' %}">회원가입</a>
+      {% endif %}
+    </div>
+
+  </div>
+
+  <div class="title">
+    {% block title %}
+
+    {% endblock title %}
+  </div>
+
+
+  <div class="content">
+    {% block content %}
+
+    {% endblock content %}
+  </div>
+
+
+  <script type="text/javascript">
+    let navlist = document.querySelector(".nav-bar");
+    let menu = document.querySelector(".menu");
+    navlist.classList.add("hidden");
+
+    menu.addEventListener("click", () => {
+      if (menu.textContent == "메뉴") {
+        navlist.classList.remove("hidden");
+        menu.textContent = "접기";
+      }
+      else {
+        navlist.classList.add("hidden");
+        menu.textContent = "메뉴";
+      };
+    })
+  </script>
+</body>
+
+</html>

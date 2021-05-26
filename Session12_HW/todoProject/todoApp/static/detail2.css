@@ -1,0 +1,46 @@
+button {
+    border: solid pink 3px;
+    background-color: pink;
+    color:white;
+    border-radius: 5px;
+}
+input {
+    border: 3px pink solid;
+    border-radius: 8px;
+}
+.small_title{
+    margin:15px;
+    font-size: 20px;
+     
+    font-weight: 600;
+    
+    text-align: center;
+}
+.border {
+    margin:30px;
+    font-size: 20px;
+}
+.click {
+    border: solid pink 3px;
+    background-color: pink;
+    color:white;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+div {
+    margin:15px;
+}
+
+.space{
+    margin:15px;
+    list-style:circle;
+    margin-left:45%;
+    text-align: left;
+    
+}
+
+.author {
+    font-size: 16px;
+    color:pink;
+}

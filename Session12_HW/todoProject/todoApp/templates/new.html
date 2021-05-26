@@ -1,0 +1,47 @@
+
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+
+<link href="{% static 'add.css' %}" type = "text/css" rel="stylesheet">
+{% endblock %}
+
+    
+    {% block title %}
+    <h2>일정 추가하기</h2>
+    {% endblock title %}
+    
+    {% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="context">
+            <label for="title">제목</label>
+            <input type="text" id="title" name= "title" placeholder="제목을 입력하세요">
+        </div>
+        <div class="context">
+            <label for="content">내용</label>            
+            <textarea name="content" onkeyup="counter()" id= "content" cols="30" rows="10" placeholder="내용을 입력하세요"></textarea>
+            <div class="counter">
+                <span id="counting">0</span>자 (공백 포함)
+            </div>
+        </div>
+        <div class="context">
+            <label for="duedate">마감일</label>
+            <input type="date" id="duedate" name= "duedate" value="{{post.duedate}}">
+        </div>
+      
+        <br>
+        <div class="center">
+            <button class="submit" type="submit">등록</button>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+    
+        function counter(){
+                document.querySelector('#counting').innerHTML = document.querySelector('#content').value.length;         
+            }
+        
+      </script>
+    {% endblock %}
