@@ -1,0 +1,36 @@
+*{
+    
+    margin : 0;
+}
+.container {
+    border:  5px dotted lightblue;
+    border-radius: 8px;
+    width: 200px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.box {
+    display:flex;
+   
+    justify-content: space-around;
+}
+.search {
+    border: solid 5px lightskyblue;
+    margin: 10px;
+    border-radius: 8px;
+    padding: 5px;
+}
+h2 {
+    margin:15px;
+    font-weight: 700;
+}
+#weatherBox {
+    border: 5px dotted lightcoral;
+    border-radius: 8px;
+    width: 200px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

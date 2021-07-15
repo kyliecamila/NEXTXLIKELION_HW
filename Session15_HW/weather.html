@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="weather.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="search">
+        <h1>도시명을 입력하세요(in English)</h1>
+        <input type="text" name="city" id="city">
+        <button id="submit">search</button>
+
+    </div>
+    <h2>검색한 도시의 날씨</h2>
+    <div class="box">
+        <div id="weatherBox"></div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="module" src="./weather.js"></script>
+    </div>
+    <h2>세계 주요 도시 날씨</h2>
+    <div class="box">
+        <div class="container">
+            <div id="weatherBox2"></div>
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            <script type="module" src="./weather.js"></script>
+
+        </div>
+        <div class="container">
+            <div id="weatherBox3"></div>
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            <script type="module" src="./weather.js"></script>
+
+        </div>
+
+        <div class="container">
+            <div id="weatherBox4"></div>
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            <script type="module" src="./weather.js"></script>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
